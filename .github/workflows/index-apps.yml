@@ -15,8 +15,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-      - run: yarn --cwd scripts
-      - run: yarn --cwd ts-node index-apps.ts
+      - run: cd scripts && yarn
+      - run: yarn ts-node index-apps.ts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ALGOLIA_APPID: F8ONSWSRN9

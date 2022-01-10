@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Switching between Ruby and Python Versions</title>
+    <meta name="generator" content="VuePress 1.9.5">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.de22d8b4.js" as="script"><link rel="preload" href="/assets/js/2.8b51eeea.js" as="script"><link rel="preload" href="/assets/js/37.6990a4f9.js" as="script"><link rel="prefetch" href="/assets/js/10.63cc0d90.js"><link rel="prefetch" href="/assets/js/11.d7602d31.js"><link rel="prefetch" href="/assets/js/12.a93bf8ad.js"><link rel="prefetch" href="/assets/js/13.8eb595df.js"><link rel="prefetch" href="/assets/js/14.9cc41a1b.js"><link rel="prefetch" href="/assets/js/15.c2a6ac56.js"><link rel="prefetch" href="/assets/js/16.9a7910ce.js"><link rel="prefetch" href="/assets/js/17.615c6623.js"><link rel="prefetch" href="/assets/js/18.e17a87d1.js"><link rel="prefetch" href="/assets/js/19.142688e2.js"><link rel="prefetch" href="/assets/js/20.3d279f89.js"><link rel="prefetch" href="/assets/js/21.afe44dce.js"><link rel="prefetch" href="/assets/js/22.3a3b628a.js"><link rel="prefetch" href="/assets/js/23.61c81eb0.js"><link rel="prefetch" href="/assets/js/24.f4b68934.js"><link rel="prefetch" href="/assets/js/25.74ebd3da.js"><link rel="prefetch" href="/assets/js/26.77c1a183.js"><link rel="prefetch" href="/assets/js/27.7a8adc31.js"><link rel="prefetch" href="/assets/js/28.20ecb62f.js"><link rel="prefetch" href="/assets/js/29.f910a812.js"><link rel="prefetch" href="/assets/js/3.577f9727.js"><link rel="prefetch" href="/assets/js/30.3182e355.js"><link rel="prefetch" href="/assets/js/31.23392059.js"><link rel="prefetch" href="/assets/js/32.f5103dac.js"><link rel="prefetch" href="/assets/js/33.cd85c1ec.js"><link rel="prefetch" href="/assets/js/34.ce6e071b.js"><link rel="prefetch" href="/assets/js/35.bca854d1.js"><link rel="prefetch" href="/assets/js/36.49deb578.js"><link rel="prefetch" href="/assets/js/38.546e1c00.js"><link rel="prefetch" href="/assets/js/39.0f54788a.js"><link rel="prefetch" href="/assets/js/4.55092137.js"><link rel="prefetch" href="/assets/js/40.28bf9f7e.js"><link rel="prefetch" href="/assets/js/41.344c8793.js"><link rel="prefetch" href="/assets/js/42.15a0dfb8.js"><link rel="prefetch" href="/assets/js/5.02018b5a.js"><link rel="prefetch" href="/assets/js/6.bd7b0c2a.js"><link rel="prefetch" href="/assets/js/7.5e404364.js"><link rel="prefetch" href="/assets/js/8.78231a17.js"><link rel="prefetch" href="/assets/js/9.4a742414.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="switching-between-ruby-and-python-versions"><a href="#switching-between-ruby-and-python-versions" class="header-anchor">#</a> Switching between Ruby and Python Versions</h1> <h2 id="scoop-reset"><a href="#scoop-reset" class="header-anchor">#</a> <code>scoop reset</code></h2> <p>If you need to run multiple versions of Ruby or Python on the same computer, you can use <code>scoop reset</code> to switch between versions.
+If you're familiar with <code>rbenv</code> or RVM this is roughly similar, although with <code>scoop reset</code> you always need to switch version manually.</p> <h2 id="ruby"><a href="#ruby" class="header-anchor">#</a> Ruby</h2> <div class="language-powershell extra-class"><pre class="language-powershell"><code>scoop bucket add versions <span class="token comment"># add the 'versions' bucket if you haven't already</span>
+
+scoop install ruby ruby19
+ruby <span class="token operator">--</span>version <span class="token comment"># -&gt; ruby 1.9.3p551 (2014-11-13) [i386-mingw32]</span>
+
+<span class="token comment"># switch to ruby 2.x</span>
+scoop reset ruby
+ruby <span class="token operator">--</span>version <span class="token comment"># -&gt; ruby 2.3.3p222 (2016-11-21 revision 56859) [x64-mingw32]</span>
+
+<span class="token comment"># switch back to 1.9.x</span>
+scoop reset ruby19
+ruby <span class="token operator">--</span>version <span class="token comment"># -&gt; ruby 1.9.3p551 (2014-11-13) [i386-mingw32]</span>
+</code></pre></div><p><code>scoop reset</code> re-installs shims for the app and updates environment variables according to the app manifest.
+You can switch between Ruby versions as many times as you like—both versions remain installed but one takes priority.</p> <h2 id="python"><a href="#python" class="header-anchor">#</a> Python</h2> <p>The same thing works for Python</p> <div class="language-powershell extra-class"><pre class="language-powershell"><code>scoop bucket add versions <span class="token comment"># add the 'versions' bucket if you haven't already</span>
+
+scoop install python27 python
+python <span class="token operator">--</span>version <span class="token comment"># -&gt; Python 3.6.2</span>
+
+<span class="token comment"># switch to python 2.7.x</span>
+scoop reset python27
+python <span class="token operator">--</span>version <span class="token comment"># -&gt; Python 2.7.13</span>
+
+<span class="token comment"># switch back (to 3.x)</span>
+scoop reset python
+python <span class="token operator">--</span>version <span class="token comment"># -&gt; Python 3.6.2</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.de22d8b4.js" defer></script><script src="/assets/js/2.8b51eeea.js" defer></script><script src="/assets/js/37.6990a4f9.js" defer></script>
+  </body>
+</html>

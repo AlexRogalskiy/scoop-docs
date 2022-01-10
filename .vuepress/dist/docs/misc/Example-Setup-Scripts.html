@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Example Setup Scripts</title>
+    <meta name="generator" content="VuePress 1.9.5">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.de22d8b4.js" as="script"><link rel="preload" href="/assets/js/2.8b51eeea.js" as="script"><link rel="preload" href="/assets/js/33.cd85c1ec.js" as="script"><link rel="prefetch" href="/assets/js/10.63cc0d90.js"><link rel="prefetch" href="/assets/js/11.d7602d31.js"><link rel="prefetch" href="/assets/js/12.a93bf8ad.js"><link rel="prefetch" href="/assets/js/13.8eb595df.js"><link rel="prefetch" href="/assets/js/14.9cc41a1b.js"><link rel="prefetch" href="/assets/js/15.c2a6ac56.js"><link rel="prefetch" href="/assets/js/16.9a7910ce.js"><link rel="prefetch" href="/assets/js/17.615c6623.js"><link rel="prefetch" href="/assets/js/18.e17a87d1.js"><link rel="prefetch" href="/assets/js/19.142688e2.js"><link rel="prefetch" href="/assets/js/20.3d279f89.js"><link rel="prefetch" href="/assets/js/21.afe44dce.js"><link rel="prefetch" href="/assets/js/22.3a3b628a.js"><link rel="prefetch" href="/assets/js/23.61c81eb0.js"><link rel="prefetch" href="/assets/js/24.f4b68934.js"><link rel="prefetch" href="/assets/js/25.74ebd3da.js"><link rel="prefetch" href="/assets/js/26.77c1a183.js"><link rel="prefetch" href="/assets/js/27.7a8adc31.js"><link rel="prefetch" href="/assets/js/28.20ecb62f.js"><link rel="prefetch" href="/assets/js/29.f910a812.js"><link rel="prefetch" href="/assets/js/3.577f9727.js"><link rel="prefetch" href="/assets/js/30.3182e355.js"><link rel="prefetch" href="/assets/js/31.23392059.js"><link rel="prefetch" href="/assets/js/32.f5103dac.js"><link rel="prefetch" href="/assets/js/34.ce6e071b.js"><link rel="prefetch" href="/assets/js/35.bca854d1.js"><link rel="prefetch" href="/assets/js/36.49deb578.js"><link rel="prefetch" href="/assets/js/37.6990a4f9.js"><link rel="prefetch" href="/assets/js/38.546e1c00.js"><link rel="prefetch" href="/assets/js/39.0f54788a.js"><link rel="prefetch" href="/assets/js/4.55092137.js"><link rel="prefetch" href="/assets/js/40.28bf9f7e.js"><link rel="prefetch" href="/assets/js/41.344c8793.js"><link rel="prefetch" href="/assets/js/42.15a0dfb8.js"><link rel="prefetch" href="/assets/js/5.02018b5a.js"><link rel="prefetch" href="/assets/js/6.bd7b0c2a.js"><link rel="prefetch" href="/assets/js/7.5e404364.js"><link rel="prefetch" href="/assets/js/8.78231a17.js"><link rel="prefetch" href="/assets/js/9.4a742414.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="example-setup-scripts"><a href="#example-setup-scripts" class="header-anchor">#</a> Example Setup Scripts</h1> <p>Here are some example &quot;get-all-my-stuff&quot; scripts.</p> <p>It's assumed that you have PowerShell 5 and you've already installed Scoop, e.g.</p> <div class="language-powershell extra-class"><pre class="language-powershell"><code><span class="token function">iex</span> <span class="token punctuation">(</span><span class="token function">new-object</span> net<span class="token punctuation">.</span>webclient<span class="token punctuation">)</span><span class="token punctuation">.</span>downloadstring<span class="token punctuation">(</span><span class="token string">'https://get.scoop.sh'</span><span class="token punctuation">)</span>
+<span class="token function">set-executionpolicy</span> unrestricted <span class="token operator">-</span>s cu
+</code></pre></div><h2 id="example-dev-environment-setup"><a href="#example-dev-environment-setup" class="header-anchor">#</a> Example dev environment setup</h2> <div class="language-powershell extra-class"><pre class="language-powershell"><code><span class="token comment"># utils</span>
+scoop install 7zip curl sudo git openssh coreutils grep sed less
+
+<span class="token comment"># programming languages</span>
+scoop install python ruby go nodejs
+
+<span class="token comment"># WAMP stack</span>
+scoop install apache mariadb php
+<span class="token function">iex</span> <span class="token punctuation">(</span><span class="token function">new-object</span> net<span class="token punctuation">.</span>webclient<span class="token punctuation">)</span><span class="token punctuation">.</span>downloadstring<span class="token punctuation">(</span><span class="token string">'https://gist.github.com/lukesampson/6546858/raw/apache-php-init.ps1'</span><span class="token punctuation">)</span>
+
+<span class="token comment"># console theme</span>
+scoop install concfg pshazz
+concfg import solarized small
+
+<span class="token comment"># vim</span>
+scoop install vim
+<span class="token string">'
+set ff=unix
+
+set cindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set backupdir=$TEMP
+'</span> <span class="token punctuation">|</span> <span class="token function">out-file</span> ~<span class="token operator">/</span><span class="token punctuation">.</span>vimrc <span class="token operator">-</span>enc oem <span class="token operator">-</span>append
+
+</code></pre></div><h2 id="example-production-environment-setup"><a href="#example-production-environment-setup" class="header-anchor">#</a> Example production environment setup</h2> <div class="language-powershell extra-class"><pre class="language-powershell"><code>scoop install sudo 7zip
+
+<span class="token comment"># make these available to system processes</span>
+sudo scoop install git ruby postgres <span class="token operator">--</span>global
+
+<span class="token comment"># just for me</span>
+scoop install grep coreutils
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.de22d8b4.js" defer></script><script src="/assets/js/2.8b51eeea.js" defer></script><script src="/assets/js/33.cd85c1ec.js" defer></script>
+  </body>
+</html>

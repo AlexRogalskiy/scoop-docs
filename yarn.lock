@@ -4338,9 +4338,7 @@
   "version" "11.12.0"
 
 "globby@^12.0.2":
-  "integrity" "sha512-lAsmb/5Lww4r7MM9nCCliDZVIKbZTavrsunAsHLr9oHthrZP1qi7/gAnHOsUs9bLvEt2vKVJhHmxuL7QbDuPdQ=="
-  "resolved" "https://registry.npmjs.org/globby/-/globby-12.0.2.tgz"
-  "version" "12.0.2"
+  version "12.2.0"
   dependencies:
     "array-union" "^3.0.1"
     "dir-glob" "^3.0.1"
